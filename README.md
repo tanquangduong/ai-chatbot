@@ -1,57 +1,79 @@
 # ai-chatbot
-Build AI Conversational Chatbot leveraging LLM
+- Build AI Conversational Chatbot leveraging LLM
 
-# Chatbot Deployment with Flask and JavaScript
+## Initial BE Setup
+- This repo currently contains the starter files.
 
-In this tutorial we deploy the chatbot I created in [this](https://github.com/python-engineer/pytorch-chatbot) tutorial with Flask and JavaScript.
+- Clone repo and create a virtual environment
+    ```
+    python3 -m venv .venv
+    . .venv/bin/activate # for Mac
+    .venv\Scripts\activate # for Window
+    ```
+    Install dependencies
+    ```
+    $ (venv) pip install -r requirements.txt
+    ```
+- Install nltk package
+    ```
+    $ (venv) python
+    >>> import nltk
+    >>> nltk.download('punkt')
+    ```
+## Playground BE
 
-This gives 2 deployment options:
-- Deploy within Flask app with jinja2 template
-- Serve only the Flask prediction API. The used html and javascript files can be included in any Frontend application (with only a slight modification) and can run completely separate from the Flask App then.
+- Modify `intents.json` with different intents and responses for your Chatbot
 
-## Initial Setup:
-This repo currently contains the starter files.
-
-Clone repo and create a virtual environment
-```
-git clone https://github.com/python-engineer/chatbot-deployment.git
-cd chatbot-deployment
-python3 -m venv .venv
-. .venv/bin/activate # for Mac
-.venv\Scripts\activate # for Window
-```
-Install dependencies
-```
-$ (venv) pip install Flask torch torchvision nltk
-```
-Install nltk package
-```
-$ (venv) python
->>> import nltk
->>> nltk.download('punkt')
-```
-Modify `intents.json` with different intents and responses for your Chatbot
-
-Run
-```
-$ (venv) python train.py
-```
-This will dump data.pth file. And then run
+- Run train script: This will dump data.pth file. And then run
 the following command to test it in the console.
+    ```
+    $ (venv) python train.py
+    ```
+- Run python demo examples
+    ```
+    $ (venv) python chat.py
+    ```
+## Launch BE
 ```
-$ (venv) python chat.py
+cd ./backend
+python app.py
 ```
 
-Now for deployment follow my tutorial to implement `app.py` and `app.js`.
+## Launch FE
+```
+cd ./fontend
+Click 'Go Live'
+```
 
-## Watch the Tutorial
-[![Alt text](https://img.youtube.com/vi/a37BL0stIuM/hqdefault.jpg)](https://youtu.be/a37BL0stIuM)  
-[https://youtu.be/a37BL0stIuM](https://youtu.be/a37BL0stIuM)
+## Setup PostgreSQL using Docker 
+- Install pgvector and postgreSQL using pgvector docker image
+```
+docker pull ankane/pgvector
+docker run --name pgvector-demo -e POSTGRES_PASSWORD=123456 -p 5432:5432 -d ankane/pgvector
+```
+- Start an existing container
+```
+docker start pgvector-demo
+```
+- Attach termina to the running container:
+```
+docker attach pgvector-demo
+```
+- Install a GUI tool such pgAdmin or use psql
 
-## Note
-In the video we implement the first approach using jinja2 templates within our Flask app. Only slight modifications are needed to run the frontend separately. I put the final frontend code for a standalone frontend application in the [standalone-frontend](/standalone-frontend) folder.
-
-## Credits:
-This repo was used for the frontend code:
-https://github.com/hitchcliff/front-end-chatjs
-
+## Setup pgAdmin
+- Click on 'Servers', choose 'Create', choose 'Server Group', give it a name, for example 'Pigment'. Then server group 'Pigment' is created.
+- Click on 'Pigment' server, choose 'Resiter', choose 'Server...', 
+    - In 'General' tab, give it a name, e.g. 'pgvector_test'
+    - In 'Connection' tab:
+        - Host name/adress: localhost
+        - Password: 123456
+    - Click 'Save', then 'pgvector_test' register is created.
+- Click on 'pgvector_test', then right click on 'Database', then 'Create'
+    - Give 'General' tab a name, e.g. 'vector_db', then 'Save'
+- Enable 'vector' extention:
+    - Right click on 'vector_db', choose 'Query Tool'
+    - Add:
+        ```
+        CREATE EXTENSION vector
+        ```

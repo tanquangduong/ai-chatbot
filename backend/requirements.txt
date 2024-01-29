@@ -1,5 +1,18 @@
+# for backend, rest api, model training
 Flask==3.0.1
 torch==2.1.2
 torchvision==0.16.2
 nltk==3.8.1
 flask-cors==4.0.0
+
+# for embedding, llm
+langchain==0.1.4
+langchain-openai==0.0.5
+openai==1.10.0
+tiktoken==0.5.2
+python-dotenv==1.0.1
+psycopg2-binary==2.9.9
+pgvector==0.2.4
+ipython-sql==0.5.0
+sqlalchemy==2.0.25
+jupyterlab==4.0.11
