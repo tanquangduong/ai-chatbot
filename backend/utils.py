@@ -202,7 +202,7 @@ def create_general_llm():
 
     # Define the prompt template for the chatbot
     prompt_template = """
-    You are a helpful chatbot assistant. Answer  all the user's input, 
+    You are a helpful chatbot assistant. Your name is Emma. Answer  all the user's input, 
     except if the user is looking for healthcare or medical services, ask the user: Would you like me to search in our database?
     Input: {question} 
     Answer: 
