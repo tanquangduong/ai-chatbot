@@ -12,11 +12,12 @@ body {
 }
 
 *, html {
-    --primaryGradient: linear-gradient(93.12deg, #581B98 0.52%, #9C1DE7 100%);
-    --secondaryGradient: linear-gradient(268.91deg, #581B98 -2.14%, #9C1DE7 99.69%);
+    --primaryGradient: linear-gradient(93.12deg, #153ceb 0.52%, #09f8d0 100%);
+    --secondaryGradient: linear-gradient(268.91deg, #153ceb -2.14%, #09f8d0 99.69%);
     --primaryBoxShadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
     --secondaryBoxShadow: 0px -10px 15px rgba(0, 0, 0, 0.1);
-    --primary: #581B98;
+    --primary: #153ceb;
+    --secondprimary: #a4f3ec;
 }
 
 /* CHATBOX
@@ -98,8 +99,8 @@ body {
 
 .chatbox__support {
     background: #f9f9f9;
-    height: 450px;
-    width: 350px;
+    height: 650px;
+    width: 850px;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
@@ -110,8 +111,8 @@ body {
     background: var(--primaryGradient);
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    align-items: left;
+    justify-content: left;
     padding: 15px 20px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
@@ -123,12 +124,13 @@ body {
 }
 
 .chatbox__heading--header {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     color: white;
 }
 
 .chatbox__description--header {
-    font-size: .9rem;
+    padding-top: 5px;
+    font-size: 1.2rem;
     color: white;
 }
 
@@ -149,6 +151,9 @@ body {
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
+    background: var(--secondprimary);
+    color: rgb(0, 0, 0);
+    font-size: 1.2rem;
 }
 
 .messages__item--operator {
@@ -157,6 +162,7 @@ body {
     border-bottom-left-radius: 20px;
     background: var(--primary);
     color: white;
+    font-size: 1.2rem;
 }
 
 /* FOOTER */
@@ -176,19 +182,21 @@ body {
 .chatbox__footer input {
     width: 80%;
     border: none;
-    padding: 10px 10px;
+    padding: 20px 20px;
     border-radius: 30px;
     text-align: left;
+    font-size: 20px;
 }
 
 .chatbox__send--footer {
     color: white;
+    font-size: 20px;
 }
 
 .chatbox__button button,
 .chatbox__button button:focus,
 .chatbox__button button:visited {
-    padding: 10px;
+    padding: 20px;
     background: white;
     border: none;
     outline: none;
