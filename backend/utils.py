@@ -13,11 +13,11 @@ load_dotenv()
 embeddings = OpenAIEmbeddings()
 
 CONNECTION_STRING = (
-    "postgresql+psycopg2://postgres:123456@localhost:5432/doctor_vector_db"
+    "postgresql+psycopg2://postgres:123456@localhost:5432/pgvector_db"
 )
 COLLECTION_NAME = "doctor_lib_vectors"
 FINAL_CONNECTION_STRING = (
-    "postgresql+psycopg2://postgres:123456@localhost:5432/chosen_vector_db"
+    "postgresql+psycopg2://postgres:123456@localhost:5432/temp_vector_db"
 )
 FINAL_COLLECTION_NAME = "chosen_doctor_vectors"
 

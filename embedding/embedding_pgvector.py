@@ -3,15 +3,17 @@ from dotenv import load_dotenv
 from langchain.vectorstores.pgvector import PGVector
 from langchain_openai import OpenAIEmbeddings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from utils import file_loader
+from utils_embedding import file_loader
+
+load_dotenv()
 
 # Define the directory where the data source files are located
-DATASOURCE_DIR = "./datasource/"
+DATASOURCE_DIR = "./datasource_test/"
 
 CONNECTION_STRING = (
-    "postgresql+psycopg2://postgres:123456@localhost:5432/doctor_vector_db"
+    "postgresql+psycopg2://postgres:123456@localhost:5432/medvector_db"
 )
-COLLECTION_NAME = "doctor_lib_vectors"
+COLLECTION_NAME = "doctor_dic"
 
 
 def process_embedding():

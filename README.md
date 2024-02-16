@@ -64,16 +64,24 @@ docker attach pgvector-demo
 ## Setup pgAdmin
 - Click on 'Servers', choose 'Create', choose 'Server Group', give it a name, for example 'Pigment'. Then server group 'Pigment' is created.
 - Click on 'Pigment' server, choose 'Resiter', choose 'Server...', 
-    - In 'General' tab, give it a name, e.g. 'pgvector_test'
+    - In 'General' tab, give it a name, e.g. 'pgvector_server'
     - In 'Connection' tab:
         - Host name/adress: localhost
         - Password: 123456
-    - Click 'Save', then 'pgvector_test' register is created.
-- Click on 'pgvector_test', then right click on 'Database', then 'Create'
-    - Give 'General' tab a name, e.g. 'vector_db', then 'Save'
+    - Click 'Save', then 'pgvector_server' register is created.
+- Click on 'pgvector_server', then right click on 'Database', then 'Create'
+    - Give 'General' tab a name, e.g. 'medvector_db', then 'Save'
 - Enable 'vector' extention:
-    - Right click on 'vector_db', choose 'Query Tool'
+    - Right click on 'medvector_db', choose 'Query Tool'
     - Add:
         ```
         CREATE EXTENSION vector
         ```
+
+## Embedding and save embedding vector to pgvector
+- CONNECTION_STRING = "postgresql+psycopg2://postgres:123456@localhost:5432/vector_db"
+    - 'vector_db': name of database
+    - 123456: password
+    - 5432: port
+- COLLECTION_NAME = 'state_of_union_vectors'
+    - 'state_of_union_vectors': name of text collection
