@@ -85,3 +85,11 @@ docker attach pgvector-demo
     - 5432: port
 - COLLECTION_NAME = 'state_of_union_vectors'
     - 'state_of_union_vectors': name of text collection
+
+## For docx loader
+```
+# for docx loader
+langchain_community==0.0.16
+unstructured==0.11.8
+python-docx==1.1.0
+```
