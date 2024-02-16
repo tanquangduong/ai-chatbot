@@ -8,6 +8,7 @@ flask-cors==4.0.0
 # for embedding, llm
 langchain==0.1.4
 langchain-openai==0.0.5
+langchain_community==0.0.16
 openai==1.10.0
 tiktoken==0.5.2
 python-dotenv==1.0.1

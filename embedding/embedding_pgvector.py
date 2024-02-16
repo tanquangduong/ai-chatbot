@@ -8,12 +8,12 @@ from utils_embedding import file_loader
 load_dotenv()
 
 # Define the directory where the data source files are located
-DATASOURCE_DIR = "./datasource_test/"
+DATASOURCE_DIR = "./datasource/"
 
 CONNECTION_STRING = (
-    "postgresql+psycopg2://postgres:123456@localhost:5432/medvector_db"
+    "postgresql+psycopg2://postgres:123456@localhost:5432/med_vectordb"
 )
-COLLECTION_NAME = "doctor_dic"
+COLLECTION_NAME = "doctor_dict"
 
 
 def process_embedding():

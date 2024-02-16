@@ -13,13 +13,13 @@ load_dotenv()
 embeddings = OpenAIEmbeddings()
 
 CONNECTION_STRING = (
-    "postgresql+psycopg2://postgres:123456@localhost:5432/pgvector_db"
+    "postgresql+psycopg2://postgres:123456@localhost:5432/med_vectordb"
 )
-COLLECTION_NAME = "doctor_lib_vectors"
+COLLECTION_NAME = "doctor_dict"
 FINAL_CONNECTION_STRING = (
-    "postgresql+psycopg2://postgres:123456@localhost:5432/temp_vector_db"
+    "postgresql+psycopg2://postgres:123456@localhost:5432/doctor_vectordb"
 )
-FINAL_COLLECTION_NAME = "chosen_doctor_vectors"
+FINAL_COLLECTION_NAME = "temp_doctor"
 
 
 def file_loader(file_path):
