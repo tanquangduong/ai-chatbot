@@ -11,7 +11,7 @@ load_dotenv()
 DATASOURCE_DIR = "./datasource/"
 
 CONNECTION_STRING = (
-    "postgresql+psycopg2://postgres:123456@localhost:5432/med_vectordb"
+    "postgresql+psycopg2://postgres:123456@localhost:5432/ragbot_vectordb"
 )
 COLLECTION_NAME = "doctor_dict"
 
